@@ -26,9 +26,13 @@
   font-weight: var(--font-medium);
   margin-bottom: 2rem;
   color: var(--white-color);
-  margin-top: 80px;
   z-index: 1;
-  background-color: hsla(0, 0%, 10%, 0.187);
+  background-color: hsla(229, 94%, 51%, 0.468);
+  border-radius: 10px;
+  width: 1000px;
+  margin: 80px auto;
+  border: 2px solid var(--white-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.963);
 }
 
 .login__input:focus {
@@ -87,7 +91,7 @@ img {
 
 .login__form {
   position: relative;
-  background-color: hsla(0, 0%, 10%, 0.1);
+  background-color: hsla(0, 0%, 10%, 0.344);
   border: 2px solid var(--white-color);
   margin-inline: auto;
   padding: 2rem 1.5rem;
@@ -134,6 +138,7 @@ img {
   position: relative;
   z-index: 1;
   margin-top: 0.5rem;
+  border: none;
 }
 
 .login__box-input {

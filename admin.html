@@ -25,20 +25,20 @@
     content="Christian Grohens, développeur web freelance à Toulouse, spécialisé dans la création de sites web, UI/UX, SEO, et plus encore. Contactez-le pour tous vos projets de développement web en France." />
 
   <!-- Open Graph Data (Facebook, LinkedIn) -->
-  <meta property="og:url" content="https://www.javachrist.fr" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Christian Grohens - Développeur Web Freelance à Toulouse" />
+  <meta property="og:url" content="https://www.javachrist.fr/admin.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Administration | JavaChrist - Gestion des Comptes Clients">
   <meta property="og:description"
-    content="Christian Grohens, développeur web freelance à Toulouse, crée des sites web performants, adaptés à vos besoins avec un design sur mesure et une optimisation SEO pour maximiser votre visibilité." />
-  <meta property="og:image" content="https://www.javachrist.fr/assets/images/thumbnail.jpg" />
-  <meta property="og:author" content="Christian Grohens" />
+    content="Interface d'administration sécurisée pour la gestion des comptes clients et le téléversement de fichiers.">
+  <meta property="og:image" content="https://www.javachrist.fr/assets/images/thumbnail.jpg">
+  <meta property="og:author" content="Christian Grohens">
   <meta property="og:publish_date" content="2024-10-13T19:00:00+00:00" />
 
   <!-- Twitter Card Data -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Christian Grohens - Développeur Web Freelance à Toulouse" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Administration | JavaChrist - Gestion des Comptes Clients">
   <meta name="twitter:description"
-    content="Christian Grohens, développeur web freelance à Toulouse, vous accompagne dans la création de sites web professionnels et performants, alliant design, UX/UI et optimisation SEO." />
+    content="Interface d'administration sécurisée pour la gestion des comptes clients et le téléversement de fichiers.">
   <meta name="twitter:image" content="https://www.javachrist.fr/assets/images/thumbnail.jpg" />
   <meta name="twitter:creator" content="@javachrist" />
 
@@ -47,7 +47,7 @@
   <meta name="publish_date" content="2024-10-13T19:00:00+00:00" />
 
   <!-- Stylesheets -->
-  <link rel=" shortcut icon" href="/assets/logo/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/assets/logo/favicon.ico" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/login.css" />
   <link rel="stylesheet" href="/style.css" />
@@ -72,81 +72,81 @@
 
     <!-- Module Création de Compte Client -->
     <div class="container-admin">
-    <section id="client-creation" class="form-section">
-      <form id="client-creation-form" class="login__form">
-        <h2 class="login__title">Créer un compte client</h2>
-    
-        <div class="login__content">
-          <div class="login__box">
-            <i class="ri-user-3-line login__icon"></i>
-            <div class="login__box-input">
-              <input type="text" id="client-name" class="login__input" required autocomplete="username" />
-              <label for="client-name" class="login__label">Nom du client</label>
+      <section id="client-creation" class="form-section">
+        <form id="client-creation-form" class="login__form">
+          <h2 class="login__title">Créer un compte client</h2>
+
+          <div class="login__content">
+            <div class="login__box">
+              <i class="ri-user-3-line login__icon"></i>
+              <div class="login__box-input">
+                <input type="text" id="client-name" class="login__input" required autocomplete="username" />
+                <label for="client-name" class="login__label">Nom du client</label>
+              </div>
+            </div>
+
+            <div class="login__box">
+              <i class="ri-mail-line login__icon"></i>
+              <div class="login__box-input">
+                <input type="email" id="client-email" class="login__input" required autocomplete="email" />
+                <label for="client-email" class="login__label">Email du client</label>
+              </div>
+            </div>
+
+            <div class="login__box">
+              <i class="ri-lock-2-line login__icon"></i>
+              <div class="login__box-input">
+                <input type="password" id="client-password" class="login__input" required autocomplete="new-password" />
+                <label for="client-password" class="login__label">Mot de passe du client</label>
+                <i class="ri-eye-off-line login__eye" id="client-login-eye"></i>
+              </div>
             </div>
           </div>
-    
-          <div class="login__box">
-            <i class="ri-mail-line login__icon"></i>
-            <div class="login__box-input">
-              <input type="email" id="client-email" class="login__input" required autocomplete="email" />
-              <label for="client-email" class="login__label">Email du client</label>
+
+          <button type="submit" class="login__button">Créer un compte</button>
+        </form>
+      </section>
+
+      <!-- Module Téléversement -->
+      <section id="file-upload" class="form-section">
+        <form id="file-upload-form" class="login__form">
+          <h2 class="login__title">Téléverser des fichiers</h2>
+
+          <div class="login__content">
+            <div class="login__box">
+              <i class="ri-mail-line login__icon"></i>
+              <div class="login__box-input">
+                <input type="email" id="target-client-email" class="login__input" required autocomplete="email" />
+                <label for="target-client-email" class="login__label">Email du client</label>
+              </div>
+            </div>
+
+            <div class="login__box">
+              <i class="ri-file-line login__icon"></i>
+              <div class="login__box-input">
+                <select id="category-select" class="login__input" required>
+                  <option value="" disabled selected>Choisir une catégorie</option>
+                  <option value="Facture">Facture</option>
+                  <option value="Document">Document</option>
+                  <option value="Téléchargement">Téléchargement</option>
+                </select>
+                <label for="category-select" class="login__label">Catégorie</label>
+              </div>
+            </div>
+
+            <div class="login__box">
+              <i class="ri-upload-line login__icon"></i>
+              <div class="login__box-input">
+                <input type="file" id="upload-file" class="login__input" required />
+                <label for="upload-file" class="login__label">Fichier</label>
+              </div>
             </div>
           </div>
-    
-          <div class="login__box">
-            <i class="ri-lock-2-line login__icon"></i>
-            <div class="login__box-input">
-              <input type="password" id="client-password" class="login__input" required autocomplete="new-password" />
-              <label for="client-password" class="login__label">Mot de passe du client</label>
-              <i class="ri-eye-off-line login__eye" id="client-login-eye"></i>
-            </div>
-          </div>
-        </div>
-    
-        <button type="submit" class="login__button">Créer un compte</button>
-      </form>
-    </section>
-    
-    <!-- Module Téléversement -->
-  <section id="file-upload" class="form-section">
-    <form id="file-upload-form" class="login__form">
-      <h2 class="login__title">Téléverser des fichiers</h2>
-  
-      <div class="login__content">
-        <div class="login__box">
-          <i class="ri-mail-line login__icon"></i>
-          <div class="login__box-input">
-            <input type="email" id="target-client-email" class="login__input" required autocomplete="email" />
-            <label for="target-client-email" class="login__label">Email du client</label>
-          </div>
-        </div>
-  
-        <div class="login__box">
-          <i class="ri-file-line login__icon"></i>
-          <div class="login__box-input">
-            <select id="category-select" class="login__input" required>
-              <option value="" disabled selected>Choisir une catégorie</option>
-              <option value="Facture">Facture</option>
-              <option value="Document">Document</option>
-              <option value="Téléchargement">Téléchargement</option>
-            </select>
-            <label for="category-select" class="login__label">Catégorie</label>
-          </div>
-        </div>
-  
-        <div class="login__box">
-          <i class="ri-upload-line login__icon"></i>
-          <div class="login__box-input">
-            <input type="file" id="upload-file" class="login__input" required />
-            <label for="upload-file" class="login__label">Fichier</label>
-          </div>
-        </div>
-      </div>
-  
-      <button type="submit" class="login__button">Téléverser</button>
-    </form>
-  </section>
-  </div>
+
+          <button type="submit" class="login__button">Téléverser</button>
+        </form>
+      </section>
+    </div>
   </main>
 
   <script type="module" src="/admin.js"></script>
