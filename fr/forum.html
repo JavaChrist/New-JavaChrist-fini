@@ -65,16 +65,36 @@
       emailjs.init("VOTRE_CLE_PUBLIQUE_EMAILJS");
     })();
   </script>
+
+  <!-- Préchargement des polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+        rel="stylesheet"
+        media="print" 
+        onload="this.media='all'">
+
 </head>
 
 <body>
   <header>
-    <div id="logo">
+    
+   <!-- Pour le logo dans le header -->
+<div id="logo">
+  <picture>
+      <source srcset="/assets/logo/Logo-Bandeau-JavaChrist.webp" type="image/webp">
       <img src="/assets/logo/Logo-Bandeau-JavaChrist.png" alt="Logo JavaChrist Développeur Web Freelance à Toulouse" />
-    </div>
-    <div class="ai-badge">
+  </picture>
+</div>
+
+<!-- Pour le badge Google AI -->
+<div class="ai-badge">
+  <picture>
+      <source srcset="/assets/logo/google-ai-essentials.webp" type="image/webp">
       <img src="/assets/logo/google-ai-essentials.png" alt="Badge Google AI Essentials" class="ai-icon" />
-    </div>
+  </picture>
+
+</div>
     <nav class="navbar" id="nav-links">
       <a href="/index.html" style="--i: 1">Accueil</a>
       <a href="/fr/blog.html" style="--i: 2">Blog</a>
@@ -117,14 +137,21 @@
       <a href="/fr/mentions-legales.html" class="license-link">Mentions légales |</a>
       <a href="/fr/politique-confidentialite.html" class="license-link">Politique de confidentialité</a>
     </div>
-    <div class="home-sci">
-      <a href="https://twitter.com/Mis7erC" target="_blank" rel="noopener noreferrer" style="--i: 8"><i
-          class="bx bxl-twitter" alt="Suivez moi sur Twitter"></i></a>
-      <a href="https://www.linkedin.com/in/javachrist/" target="_blank" rel="noopener noreferrer" style="--i: 9"><i
-          class="bx bxl-linkedin" alt="Suivez moi sur Linkedin"></i></a>
-      <a href="https://github.com/JavaChrist" target="_blank" rel="noopener noreferrer" style="--i: 10"><i
-          class="bx bxl-github" alt="Regarder mon travail sur Github"></i></a>
-    </div>
+
+   <div class="home-sci">
+    <a href="https://twitter.com/Mis7erC" target="_blank" rel="noopener noreferrer" style="--i: 8">
+        <i class="bx bxl-twitter" aria-hidden="true"></i>
+        <span class="sr-only">Suivez-moi sur Twitter</span>
+    </a>
+    <a href="https://www.linkedin.com/in/javachrist/" target="_blank" rel="noopener noreferrer" style="--i: 9">
+        <i class="bx bxl-linkedin" aria-hidden="true"></i>
+        <span class="sr-only">Suivez-moi sur LinkedIn</span>
+    </a>
+    <a href="https://github.com/JavaChrist" target="_blank" rel="noopener noreferrer" style="--i: 10">
+        <i class="bx bxl-github" aria-hidden="true"></i>
+        <span class="sr-only">Regardez mon travail sur Github</span>
+    </a>
+</div>
   </footer>
   <script src="/script.js"></script>
 </body>
