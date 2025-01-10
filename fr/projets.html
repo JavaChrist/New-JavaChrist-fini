@@ -46,19 +46,20 @@
     <meta name="author" content="Christian Grohens" />
     <meta name="publish_date" content="2024-10-13T19:00:00+00:00" />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/variables.css">
+    <!-- CSS Critique -->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/projets.css">
-    <link rel="preload" href="https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2" as="font" type="font/woff2"
-        crossorigin>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/variables.css">
 
-    <!-- Préchargement des polices -->
+    <!-- CSS Non-critique avec chargement différé -->
+    <link rel="stylesheet" href="/projets.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" media="print"
+        onload="this.media='all'">
+
+    <!-- Polices avec swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 
 <body>
@@ -66,20 +67,42 @@
     <header>
 
         <!-- Pour le logo dans le header -->
-<div id="logo">
-    <picture>
-        <source srcset="/assets/logo/Logo-Bandeau-JavaChrist.webp" type="image/webp">
-        <img src="/assets/logo/Logo-Bandeau-JavaChrist.png" alt="Logo JavaChrist Développeur Web Freelance à Toulouse" />
-    </picture>
-</div>
+        <div id="logo">
+            <picture>
+                <!-- Mobile -->
+                <source media="(max-width: 480px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.webp"
+                    type="image/webp">
+                <source media="(max-width: 480px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.png"
+                    type="image/png">
 
-<!-- Pour le badge Google AI -->
-<div class="ai-badge">
-    <picture>
-        <source srcset="/assets/logo/google-ai-essentials.webp" type="image/webp">
-        <img src="/assets/logo/google-ai-essentials.png" alt="Badge Google AI Essentials" class="ai-icon" />
-    </picture>
-</div>
+                <!-- Tablet -->
+                <source media="(max-width: 768px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.webp"
+                    type="image/webp">
+                <source media="(max-width: 768px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.png"
+                    type="image/png">
+
+                <!-- Desktop -->
+                <source srcset="/assets/logo/Logo-Bandeau-JavaChrist-300x45.webp" type="image/webp">
+                <img src="/assets/logo/Logo-Bandeau-JavaChrist-300x45.png"
+                    alt="JavaChrist Logo Développeur Web à Toulouse" width="300" height="45" fetchpriority="high">
+            </picture>
+        </div>
+
+        <!-- Pour le badge Google AI -->
+        <div class="ai-badge">
+            <picture>
+                <!-- Mobile -->
+                <source media="(max-width: 768px)" srcset="/assets/logo/google-ai-essentials-40x40.webp"
+                    type="image/webp">
+                <source media="(max-width: 768px)" srcset="/assets/logo/google-ai-essentials-40x40.png"
+                    type="image/png">
+
+                <!-- Desktop -->
+                <source srcset="/assets/logo/google-ai-essentials-60x60.webp" type="image/webp">
+                <img src="/assets/logo/google-ai-essentials-60x60.png" alt="Badge Google AI Essentials" width="60"
+                    height="60" loading="lazy" class="ai-icon">
+            </picture>
+        </div>
 
         <nav class="navbar" id="nav-links">
             <a href="/index.html" style="--i: 1">Accueil</a>
@@ -89,9 +112,9 @@
             <a href="/fr/projets.html" style="--i: 5">Projets</a>
             <a href="/fr/contact.html" style="--i: 6">Contact</a>
             <a href="/fr/faq.html" style="--i: 7">FAQ</a>
-        <a href="/fr/forum.html" style="--i: 8">Forum</a>
-        <a href="/en/home.html" style="--i: 9">English</a>
-        <a href="/fr/login.html" style="--i: 10">Login</a>
+            <a href="/fr/forum.html" style="--i: 8">Forum</a>
+            <a href="/en/home.html" style="--i: 9">English</a>
+            <a href="/fr/login.html" style="--i: 10">Login</a>
         </nav>
 
         <div class="hamburger" id="hamburger">
@@ -99,13 +122,13 @@
         </div>
 
     </header>
-    
+
     <main>
 
         <div class="container">
-            
+
             <div class="cube">
-                
+
                 <div class="face front">
                     <img src="/assets/image/Restaurant.webp" alt="Restaurant à Toulouse" data-modal="modal1">
                 </div>
@@ -116,7 +139,7 @@
                     <img src="/assets/image/Gaming-Campus.webp" alt="Image du site d'un Campus" data-modal="modal3">
                 </div>
                 <div class="face left"> <img src="/assets/image/Kinship.webp" alt="Image d'une application mobile"
-                    data-modal="modal4">
+                        data-modal="modal4">
                 </div>
                 <div class="face top">
                     <img src="/assets/image/Barbier.webp" alt="Image d'une page de login" data-modal="modal2">
@@ -131,7 +154,7 @@
     <a href="/fr/avis.html" class="btn-box">
         <span class="full-text">Quelques Témoignages</span>
         <span class="short-text">Avis</span>
-      </a>
+    </a>
 
     <!-- Modals -->
     <div id="modal1" class="modal">
@@ -270,8 +293,8 @@
                 Plongez dans mon univers créatif et découvrez comment je peux transformer vos idées en projets web
                 innovants et
                 performants.</p>
-            <a href="https://portfolio.javachrist.fr/" target="_blank"> 
-            <button>Action</button>
+            <a href="https://portfolio.javachrist.fr/" target="_blank">
+                <button>Action</button>
             </a>
         </div>
     </div>
@@ -302,6 +325,7 @@
         </div>
     </footer>
 
+    <!-- Scripts en fin de page -->
     <script src="/script.js"></script>
     <script src="/projets.js"></script>
 </body>

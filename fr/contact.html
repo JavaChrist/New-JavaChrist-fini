@@ -4,61 +4,62 @@
 <head>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-          'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-WQ3JSGMX');</script>
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WQ3JSGMX');</script>
     <!-- End Google Tag Manager -->
-  
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
     <!-- Title and Favicon -->
     <title>Contact | JavaChrist - Développeur Web Freelance à Toulouse</title>
     <link rel="shortcut icon" href="/assets/logo/favicon.ico" type="image/x-icon" />
-  
+
     <!-- Meta Description for SEO -->
     <meta name="description"
-      content="Contactez JavaChrist, votre développeur web freelance à Toulouse. Discutons de vos projets web et trouvons ensemble les meilleures solutions pour votre présence en ligne." />
-  
+        content="Contactez JavaChrist, votre développeur web freelance à Toulouse. Discutons de vos projets web et trouvons ensemble les meilleures solutions pour votre présence en ligne." />
+
     <!-- Open Graph Data (Facebook, LinkedIn) -->
     <meta property="og:url" content="https://www.javachrist.fr" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Contact - Christian Grohens | Développeur Web Freelance à Toulouse" />
     <meta property="og:description"
-      content="Prenez contact avec Christian Grohens, développeur web freelance à Toulouse. Discutons de vos projets web et trouvons ensemble les meilleures solutions pour votre présence en ligne." />
+        content="Prenez contact avec Christian Grohens, développeur web freelance à Toulouse. Discutons de vos projets web et trouvons ensemble les meilleures solutions pour votre présence en ligne." />
     <meta property="og:image" content="https://www.javachrist.fr/assets/images/thumbnail.jpg" />
     <meta property="og:author" content="Christian Grohens" />
     <meta property="og:publish_date" content="2024-10-13T19:00:00+00:00" />
-  
+
     <!-- Twitter Card Data -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Contact - Christian Grohens | Développeur Web Freelance à Toulouse" />
     <meta name="twitter:description"
-      content="Prenez contact avec Christian Grohens, développeur web freelance à Toulouse. Discutons de vos projets web et trouvons ensemble les meilleures solutions pour votre présence en ligne." />
+        content="Prenez contact avec Christian Grohens, développeur web freelance à Toulouse. Discutons de vos projets web et trouvons ensemble les meilleures solutions pour votre présence en ligne." />
     <meta name="twitter:image" content="https://www.javachrist.fr/assets/images/thumbnail.jpg" />
     <meta name="twitter:creator" content="@javachrist" />
-  
+
     <!-- Meta for Author and Publish Date -->
     <meta name="author" content="Christian Grohens" />
     <meta name="publish_date" content="2024-10-13T19:00:00+00:00" />
 
-    <!-- Stylesheets -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- CSS Critique -->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/contact.css">
     <link rel="stylesheet" href="/variables.css">
 
-      <!-- Préchargement des polices -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
-            rel="stylesheet"
-            media="print" 
-            onload="this.media='all'">
+    <!-- CSS Non-critique avec chargement différé -->
+    <link rel="stylesheet" href="/contact.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" media="print"
+        onload="this.media='all'">
+
+    <!-- Polices avec swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 
 <body>
@@ -68,20 +69,42 @@
     <header>
 
         <!-- Pour le logo dans le header -->
-<div id="logo">
-    <picture>
-        <source srcset="/assets/logo/Logo-Bandeau-JavaChrist.webp" type="image/webp">
-        <img src="/assets/logo/Logo-Bandeau-JavaChrist.png" alt="Logo JavaChrist Développeur Web Freelance à Toulouse" />
-    </picture>
-</div>
+        <div id="logo">
+            <picture>
+                <!-- Mobile -->
+                <source media="(max-width: 480px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.webp"
+                    type="image/webp">
+                <source media="(max-width: 480px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.png"
+                    type="image/png">
 
-<!-- Pour le badge Google AI -->
-<div class="ai-badge">
-    <picture>
-        <source srcset="/assets/logo/google-ai-essentials.webp" type="image/webp">
-        <img src="/assets/logo/google-ai-essentials.png" alt="Badge Google AI Essentials" class="ai-icon" />
-    </picture>
-</div>
+                <!-- Tablet -->
+                <source media="(max-width: 768px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.webp"
+                    type="image/webp">
+                <source media="(max-width: 768px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.png"
+                    type="image/png">
+
+                <!-- Desktop -->
+                <source srcset="/assets/logo/Logo-Bandeau-JavaChrist-300x45.webp" type="image/webp">
+                <img src="/assets/logo/Logo-Bandeau-JavaChrist-300x45.png"
+                    alt="JavaChrist Logo Développeur Web à Toulouse" width="300" height="45" fetchpriority="high">
+            </picture>
+        </div>
+
+        <!-- Pour le badge Google AI -->
+        <div class="ai-badge">
+            <picture>
+                <!-- Mobile -->
+                <source media="(max-width: 768px)" srcset="/assets/logo/google-ai-essentials-40x40.webp"
+                    type="image/webp">
+                <source media="(max-width: 768px)" srcset="/assets/logo/google-ai-essentials-40x40.png"
+                    type="image/png">
+
+                <!-- Desktop -->
+                <source srcset="/assets/logo/google-ai-essentials-60x60.webp" type="image/webp">
+                <img src="/assets/logo/google-ai-essentials-60x60.png" alt="Badge Google AI Essentials" width="60"
+                    height="60" loading="lazy" class="ai-icon">
+            </picture>
+        </div>
 
         <nav class="navbar" id="nav-links">
             <a href="/index.html" style="--i: 1">Accueil</a>
@@ -91,9 +114,9 @@
             <a href="/fr/projets.html" style="--i: 5">Projets</a>
             <a href="/fr/contact.html" style="--i: 6">Contact</a>
             <a href="/fr/faq.html" style="--i: 7">FAQ</a>
-        <a href="/fr/forum.html" style="--i: 8">Forum</a>
-        <a href="/en/home.html" style="--i: 9">English</a>
-        <a href="/fr/login.html" style="--i: 10">Login</a>
+            <a href="/fr/forum.html" style="--i: 8">Forum</a>
+            <a href="/en/home.html" style="--i: 9">English</a>
+            <a href="/fr/login.html" style="--i: 10">Login</a>
         </nav>
 
         <div class="hamburger" id="hamburger">
@@ -103,7 +126,7 @@
     </header>
 
     <div class="content">
-        <div id="rain-container"></div>  <!-- Ajout du conteneur pour l'effet de pluie -->
+        <div id="rain-container"></div> <!-- Ajout du conteneur pour l'effet de pluie -->
         <section class="contact" id="contact">
 
             <div class="contact-text">
@@ -140,7 +163,7 @@
 
         </section>
     </div>
-    
+
     <footer>
         <p id="copyright">&copy; <span id="year"></span> JavaChrist. Tous droits réservés.</p>
         <div>
@@ -165,8 +188,8 @@
             </a>
         </div>
     </footer>
-    <script src="/script.js"></script>
-    <script src="/contact.js"></script>
+    <script defer src="/script.js"></script>
+    <script defer src="/contact.js"></script>
 </body>
 
 </html>

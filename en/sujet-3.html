@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <!-- Google Tag Manager -->
@@ -47,16 +47,19 @@
   <meta name="publish_date" content="2024-10-13T19:00:00+00:00" />
 
   <!-- Stylesheets -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/sujet.css">
   <link rel="stylesheet" href="/variables.css">
+
+  <!-- CSS Non-critique avec chargement différé -->
+  <link rel="stylesheet" href="/sujet.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" media="print"
+    onload="this.media='all'">
 
   <!-- Préchargement des polices -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
-        rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
 
 </head>
 
@@ -64,22 +67,58 @@
 
   <header>
 
-   <!-- Pour le logo dans le header -->
-<div id="logo">
-  <picture>
-      <source srcset="/assets/logo/Logo-Bandeau-JavaChrist.webp" type="image/webp">
-      <img src="/assets/logo/Logo-Bandeau-JavaChrist.png" alt="JavaChrist Logo Freelance Web Developer in Toulouse" />
-  </picture>
-</div>
+    <!-- Pour le logo dans le header -->
+    <div id="logo">
+      <picture>
+          <!-- Mobile -->
+          <source media="(max-width: 480px)"
+                  srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.webp"
+                  type="image/webp">
+          <source media="(max-width: 480px)"
+                  srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.png"
+                  type="image/png">
+          
+          <!-- Tablet -->
+          <source media="(max-width: 768px)"
+                  srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.webp"
+                  type="image/webp">
+          <source media="(max-width: 768px)"
+                  srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.png"
+                  type="image/png">
+          
+          <!-- Desktop -->
+          <source srcset="/assets/logo/Logo-Bandeau-JavaChrist-300x45.webp"
+                  type="image/webp">
+          <img src="/assets/logo/Logo-Bandeau-JavaChrist-300x45.png"
+               alt="JavaChrist Logo Développeur Web à Toulouse"
+               width="300"
+               height="45"
+               fetchpriority="high">
+      </picture>
+  </div>
 
-<!-- Pour le badge Google AI -->
-<div class="ai-badge">
-  <picture>
-      <source srcset="/assets/logo/google-ai-essentials.webp" type="image/webp">
-      <img src="/assets/logo/google-ai-essentials.png" alt="Google AI Essentials Badge" class="ai-icon" />
-  </picture>
-</div>
-
+  <!-- Pour le badge Google AI -->
+  <div class="ai-badge">
+      <picture>
+          <!-- Mobile -->
+          <source media="(max-width: 768px)"
+                  srcset="/assets/logo/google-ai-essentials-40x40.webp"
+                  type="image/webp">
+          <source media="(max-width: 768px)"
+                  srcset="/assets/logo/google-ai-essentials-40x40.png"
+                  type="image/png">
+          
+          <!-- Desktop -->
+          <source srcset="/assets/logo/google-ai-essentials-60x60.webp"
+                  type="image/webp">
+          <img src="/assets/logo/google-ai-essentials-60x60.png"
+               alt="Badge Google AI Essentials"
+               width="60"
+               height="60"
+               loading="lazy"
+               class="ai-icon">
+      </picture>
+  </div>
     <nav class="navbar" id="nav-links">
       <a href="/en/home.html" style="--i: 1">Home</a>
       <a href="/en/blog.html" style="--i: 2">Blog</a>
@@ -90,7 +129,7 @@
       <a href="/en/faq.html" style="--i: 7">FAQ</a>
       <a href="/index.html" style="--i: 8">Français</a>
       <a href="/en/login-en.html" style="--i: 9">Login</a>
-  </nav>
+    </nav>
 
     <div class="hamburger" id="hamburger">
       <i class="bx bx-menu"></i>
@@ -102,7 +141,7 @@
 
     <h1>Advanced SEO</h1>
     <h3>Advanced techniques to improve your website’s SEO</h3>
-    
+
     <section>
       <h2>Introduction</h2>
       <p>
@@ -184,11 +223,11 @@
         An XML sitemap is crucial to help search engines index all the pages of your site.
         Make sure it is up to date and
         submitted to Google Search Console and Bing Webmaster Tools for better indexing.
-        </p>
-        <p>
-          The XML sitemap helps search engine robots find and understand your site structure. It
-          must include all pages
-          important and update automatically when you add or edit content on your site.
+      </p>
+      <p>
+        The XML sitemap helps search engine robots find and understand your site structure. It
+        must include all pages
+        important and update automatically when you add or edit content on your site.
       </p>
     </section>
 
@@ -290,15 +329,15 @@
         such as responsive design and Accelerated Mobile Pages (AMP) to ensure a user experience
         fluid
         on all devices.
-        </p>
-        <p>
-          Make sure your site is easy to navigate on small screens and that loading times are
-          fast
-          on mobile devices.
-          Google uses mobile-first indexing, which means that the mobile version of your site is considered
-          as
-          main for the
-          classification.
+      </p>
+      <p>
+        Make sure your site is easy to navigate on small screens and that loading times are
+        fast
+        on mobile devices.
+        Google uses mobile-first indexing, which means that the mobile version of your site is considered
+        as
+        main for the
+        classification.
       </p>
     </section>
 
@@ -374,12 +413,12 @@
         discussion.
         More users
         Interact with your content, the more search engines consider your site useful and relevant.
-        </p>
-        <p>
-          Create engaging content that invites users to leave comments and share your articles.
-          User engagement
-          can also improve time spent on site and reduce bounce rates, which is beneficial for the
-          SEO.
+      </p>
+      <p>
+        Create engaging content that invites users to leave comments and share your articles.
+        User engagement
+        can also improve time spent on site and reduce bounce rates, which is beneficial for the
+        SEO.
       </p>
     </section>
 
@@ -393,14 +432,14 @@
         of
         descriptions and tags
         ALT appropriate.
-        </p>
-        <p>
-          Optimized media files not only improve page loading speed, but also
-          accessibility and experience
-          . Also consider providing subtitles for videos and descriptions for
-          infographics
-          to render your content
-          accessible to a wider audience.
+      </p>
+      <p>
+        Optimized media files not only improve page loading speed, but also
+        accessibility and experience
+        . Also consider providing subtitles for videos and descriptions for
+        infographics
+        to render your content
+        accessible to a wider audience.
       </p>
     </section>
 
@@ -411,12 +450,12 @@
         for
         identify and correct
         broken links on your site. This includes internal and external links.
-        </p>
-        <p>
-          Fixing broken links improves navigation on your site and shows search engines that
-          your
-          site is well maintained
-          and reliable. Make sure to check the links regularly to maintain a site free of errors.
+      </p>
+      <p>
+        Fixing broken links improves navigation on your site and shows search engines that
+        your
+        site is well maintained
+        and reliable. Make sure to check the links regularly to maintain a site free of errors.
       </p>
     </section>
 
@@ -426,14 +465,14 @@
         A secure site (HTTPS) is essential for SEO. Google prioritizes secure sites in its search results.
         search. Make sure that
         your site uses an SSL certificate and all pages are accessible via HTTPS.
-        </p>
-        <p>
-          In addition to improving your ranking in search results, a secure site reassures users
-          on
-          confidentiality and
-          the security of their personal information. This is a crucial aspect for any e-commerce or service
-          en
-          line.
+      </p>
+      <p>
+        In addition to improving your ranking in search results, a secure site reassures users
+        on
+        confidentiality and
+        the security of their personal information. This is a crucial aspect for any e-commerce or service
+        en
+        line.
       </p>
     </section>
 
@@ -444,11 +483,11 @@
         loading times
         for users away from the main server. This improves site performance and experience
         user.
-        </p>
-        <p>
-          Using CDNs can also reduce the load on your main server, which can improve
-          stability and speed of
-          your site. This is particularly useful for sites with an international audience.
+      </p>
+      <p>
+        Using CDNs can also reduce the load on your main server, which can improve
+        stability and speed of
+        your site. This is particularly useful for sites with an international audience.
       </p>
     </section>
 
@@ -461,12 +500,12 @@
         Elements such as titles, CTA (calls to action), and page layouts to optimize the rate of
         conversion and commitment
         users.
-        </p>
-        <p>
-          A/B testing allows you to continuously optimize your site based on preferences and
-          user behaviour.
-          Analyze results to make informed adjustments that can significantly improve the experience
-          user and conversions.
+      </p>
+      <p>
+        A/B testing allows you to continuously optimize your site based on preferences and
+        user behaviour.
+        Analyze results to make informed adjustments that can significantly improve the experience
+        user and conversions.
       </p>
     </section>
 
@@ -475,7 +514,7 @@
   <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
 
   <footer>
-    
+
     <p id="copyright">&copy; <span id="year"></span> JavaChrist. All rights reserved.</p>
 
     <div>
@@ -484,22 +523,22 @@
       </a>
       <a href="/en/privacy-policy.html" class="license-link">Privacy policy</a>
     </div>
-  
+
     <div class="home-sci">
       <a href="https://twitter.com/Mis7erC" target="_blank" rel="noopener noreferrer" style="--i: 8">
-          <i class="bx bxl-twitter" aria-hidden="true"></i>
-          <span class="sr-only">Follow me on Twitter</span>
+        <i class="bx bxl-twitter" aria-hidden="true"></i>
+        <span class="sr-only">Follow me on Twitter</span>
       </a>
       <a href="https://www.linkedin.com/in/javachrist/" target="_blank" rel="noopener noreferrer" style="--i: 9">
-          <i class="bx bxl-linkedin" aria-hidden="true"></i>
-          <span class="sr-only">Connect with me on LinkedIn</span>
+        <i class="bx bxl-linkedin" aria-hidden="true"></i>
+        <span class="sr-only">Connect with me on LinkedIn</span>
       </a>
       <a href="https://github.com/JavaChrist" target="_blank" rel="noopener noreferrer" style="--i: 10">
-          <i class="bx bxl-github" aria-hidden="true"></i>
-          <span class="sr-only">Check out my projects on GitHub</span>
+        <i class="bx bxl-github" aria-hidden="true"></i>
+        <span class="sr-only">Check out my projects on GitHub</span>
       </a>
-  </div>
-    
+    </div>
+
   </footer>
 
   <script src="/script.js"></script>
