@@ -1,0 +1,37 @@
+:root {
+  /* Couleurs */
+  --primary-color: #09484d;
+  --secondary-color: #0ef;
+  --background-transparent: rgba(7, 85, 91, 0.585);
+  --text-light: #fff;
+  --text-dark: #555;
+
+  /* Espacements */
+  --spacing-xs: 10px;
+  --spacing-sm: 20px;
+  --spacing-md: 30px;
+
+  /* Tailles */
+  --container-width: 1000px;
+
+  /* Animations */
+  --transition-standard: all 0.3s ease;
+
+  /* Ombres */
+  --shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+  /* Couleurs services */
+  --card-back-color: #ed5d34;
+  --card-title-color: #1a2f42;
+
+  /* Transitions */
+  --transition-flip: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+  /* Nouvelles variables pour le forum */
+  --text-gray: #888;
+  --background-light: #f5f5f5;
+  --border-color: #ddd;
+  --warning-bg: #fff3cd;
+  --warning-text: #856404;
+  --warning-border: #ffeeba;
+}

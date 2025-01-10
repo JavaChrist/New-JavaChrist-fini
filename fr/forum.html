@@ -44,12 +44,22 @@
   <meta name="twitter:description"
     content="Participez aux discussions sur le développement web, partagez vos expériences et posez vos questions dans notre forum dédié à la communauté web.">
 
-  <!-- Stylesheets -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- CSS Critique -->
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/forum.css">
+  <link rel="stylesheet" href="/variables.css">
 
-  <!-- Firebase SDK -->
+  <!-- CSS Non-critique avec chargement différé -->
+  <link rel="stylesheet" href="/forum.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" media="print"
+    onload="this.media='all'">
+
+  <!-- Polices avec swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Firebase SDK avec type module -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
     import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
@@ -58,22 +68,41 @@
     window.getFirestore = getFirestore;
     window.getAuth = getAuth;
   </script>
-  <script src="/forum.js" type="module" defer></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("VOTRE_CLE_PUBLIQUE_EMAILJS");
-    })();
-  </script>
 </head>
 
 <body>
   <header>
+
+    <!-- Pour le logo dans le header -->
     <div id="logo">
-      <img src="/assets/logo/Logo-Bandeau-JavaChrist.png" alt="Logo JavaChrist Développeur Web Freelance à Toulouse" />
+      <picture>
+        <!-- Mobile -->
+        <source media="(max-width: 480px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.webp" type="image/webp">
+        <source media="(max-width: 480px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.png" type="image/png">
+
+        <!-- Tablet -->
+        <source media="(max-width: 768px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.webp" type="image/webp">
+        <source media="(max-width: 768px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.png" type="image/png">
+
+        <!-- Desktop -->
+        <source srcset="/assets/logo/Logo-Bandeau-JavaChrist-300x45.webp" type="image/webp">
+        <img src="/assets/logo/Logo-Bandeau-JavaChrist-300x45.png" alt="JavaChrist Logo Développeur Web à Toulouse"
+          width="300" height="45" fetchpriority="high">
+      </picture>
     </div>
+
+    <!-- Pour le badge Google AI -->
     <div class="ai-badge">
-      <img src="/assets/logo/google-ai-essentials.png" alt="Badge Google AI Essentials" class="ai-icon" />
+      <picture>
+        <!-- Mobile -->
+        <source media="(max-width: 768px)" srcset="/assets/logo/google-ai-essentials-40x40.webp" type="image/webp">
+        <source media="(max-width: 768px)" srcset="/assets/logo/google-ai-essentials-40x40.png" type="image/png">
+
+        <!-- Desktop -->
+        <source srcset="/assets/logo/google-ai-essentials-60x60.webp" type="image/webp">
+        <img src="/assets/logo/google-ai-essentials-60x60.png" alt="Badge Google AI Essentials" width="60" height="60"
+          loading="lazy" class="ai-icon">
+      </picture>
     </div>
     <nav class="navbar" id="nav-links">
       <a href="/index.html" style="--i: 1">Accueil</a>
@@ -117,16 +146,30 @@
       <a href="/fr/mentions-legales.html" class="license-link">Mentions légales |</a>
       <a href="/fr/politique-confidentialite.html" class="license-link">Politique de confidentialité</a>
     </div>
+
     <div class="home-sci">
-      <a href="https://twitter.com/Mis7erC" target="_blank" rel="noopener noreferrer" style="--i: 8"><i
-          class="bx bxl-twitter" alt="Suivez moi sur Twitter"></i></a>
-      <a href="https://www.linkedin.com/in/javachrist/" target="_blank" rel="noopener noreferrer" style="--i: 9"><i
-          class="bx bxl-linkedin" alt="Suivez moi sur Linkedin"></i></a>
-      <a href="https://github.com/JavaChrist" target="_blank" rel="noopener noreferrer" style="--i: 10"><i
-          class="bx bxl-github" alt="Regarder mon travail sur Github"></i></a>
+      <a href="https://twitter.com/Mis7erC" target="_blank" rel="noopener noreferrer" style="--i: 8">
+        <i class="bx bxl-twitter" aria-hidden="true"></i>
+        <span class="sr-only">Suivez-moi sur Twitter</span>
+      </a>
+      <a href="https://www.linkedin.com/in/javachrist/" target="_blank" rel="noopener noreferrer" style="--i: 9">
+        <i class="bx bxl-linkedin" aria-hidden="true"></i>
+        <span class="sr-only">Suivez-moi sur LinkedIn</span>
+      </a>
+      <a href="https://github.com/JavaChrist" target="_blank" rel="noopener noreferrer" style="--i: 10">
+        <i class="bx bxl-github" aria-hidden="true"></i>
+        <span class="sr-only">Regardez mon travail sur Github</span>
+      </a>
     </div>
   </footer>
   <script src="/script.js"></script>
+  <script type="module" src="/forum.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("VOTRE_CLE_PUBLIQUE_EMAILJS");
+    })();
+  </script>
 </body>
 
 </html>

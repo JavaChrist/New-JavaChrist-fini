@@ -1,0 +1,53 @@
+CONTEXTE :
+Travail sur un site web personnel avec plusieurs pages. Création d'un système de variables CSS pour uniformiser le style.
+
+TRAVAIL ACCOMPLI :
+1. Création de variables.css :
+   - Définition des couleurs principales
+   - Polices et tailles de texte
+   - Espacements standards
+   - Breakpoints responsive
+   - Transitions et animations communes
+
+2. CSS déjà modifiés avec les variables :
+   - style.css (général)
+   - blog.css
+   - chat.css
+   - services.css
+   - contact.css
+   - info.css
+   - faq.css
+
+3. Dernière modification sur projets.css :
+   - Création d'un cube 3D rotatif
+   - Animation d'apparition du cube (fadeIn)
+   - Bouton "Témoignages" avec animation depuis le bas
+   - Responsive design à 700px
+   - Modales pour chaque face du cube
+
+PROBLÈME EN COURS :
+Conflit de style dans projets.css :
+- Le header ne prend pas correctement les styles de style.css
+- Logo décalé vers la gauche
+- Navbar avec espacements irréguliers
+- Footer fonctionne correctement (pas affecté)
+
+FICHIERS CSS RESTANTS À MODIFIER :
+1. forum.css
+2. mentions.css
+3. avis.css
+4. accueil.css
+5. client.css
+6. login.css
+7. politique.css
+
+STANDARDS À MAINTENIR :
+1. Utilisation des variables CSS définies dans variables.css
+2. Responsive design
+3. Animations fluides
+4. Cohérence visuelle avec le reste du site
+5. Optimisation des performances
+
+PRIORITÉ :
+1. Résoudre le conflit de style dans projets.css
+2. Continuer l'implémentation des variables dans les CSS restants

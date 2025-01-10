@@ -9,7 +9,7 @@ body {
 .mention-content {
   background: rgba(7, 85, 91, 0.634);
   width: 90%;
-min-height: 1850px;
+  min-height: 1850px;
   border-radius: 25px;
   padding: 10px;
   margin: 100px auto;
@@ -40,4 +40,21 @@ min-height: 1850px;
   opacity: 0;
   animation: slideLeft 1s ease forwards;
   animation-delay: 3s;
+}
+
+/* Style pour les sous-titres h4 */
+.mention-content h4 {
+  color: #0ef;
+  font-size: clamp(18px, 3vw, 25px);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+/* Style pour le texte en gras */
+.mention-content b {
+  color: #0ef;
+  font-weight: 600;
 }

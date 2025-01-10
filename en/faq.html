@@ -45,19 +45,55 @@
 
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/faq.css">
+  <link rel="stylesheet" href="/variables.css">
+
+  <!-- CSS Non-critique avec chargement différé -->
+  <link rel="stylesheet" href="/faq.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" media="print"
+    onload="this.media='all'">
+
+  <!-- Polices avec swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+
 </head>
 
 <body>
 
   <header>
 
+    <!-- Pour le logo dans le header -->
     <div id="logo">
-      <img src="/assets/logo/Logo-Bandeau-JavaChrist.png" alt="Logo JavaChrist Développeur Web Freelance à Toulouse">
+      <picture>
+        <!-- Mobile -->
+        <source media="(max-width: 480px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.webp" type="image/webp">
+        <source media="(max-width: 480px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-150x23.png" type="image/png">
+
+        <!-- Tablet -->
+        <source media="(max-width: 768px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.webp" type="image/webp">
+        <source media="(max-width: 768px)" srcset="/assets/logo/Logo-Bandeau-JavaChrist-200x30.png" type="image/png">
+
+        <!-- Desktop -->
+        <source srcset="/assets/logo/Logo-Bandeau-JavaChrist-300x45.webp" type="image/webp">
+        <img src="/assets/logo/Logo-Bandeau-JavaChrist-300x45.png" alt="JavaChrist Logo Web Developer in Toulouse"
+          width="300" height="45" fetchpriority="high">
+      </picture>
     </div>
 
+    <!-- Pour le badge Google AI -->
     <div class="ai-badge">
-      <img src="/assets/logo/google-ai-essentials.png" alt="Badge Google AI Essentials" class="ai-icon">
+      <picture>
+        <!-- Mobile -->
+        <source media="(max-width: 768px)" srcset="/assets/logo/google-ai-essentials-40x40.webp" type="image/webp">
+        <source media="(max-width: 768px)" srcset="/assets/logo/google-ai-essentials-40x40.png" type="image/png">
+
+        <!-- Desktop -->
+        <source srcset="/assets/logo/google-ai-essentials-60x60.webp" type="image/webp">
+        <img src="/assets/logo/google-ai-essentials-60x60.png" alt="Google AI Essentials Badge" width="60" height="60"
+          loading="lazy" class="ai-icon">
+      </picture>
     </div>
 
     <nav class="navbar" id="nav-links">
@@ -108,7 +144,7 @@
                   <strong>complete business websites, with a focus on modern design, ergonomics, and
                     performance.</strong>
                 </p>
-                <div class="feedback-container"> 
+                <div class="feedback-container">
                   <p>Was this answer helpful ?</p>
                   <div class="feedback-buttons">
                     <button class="feedback-btn" data-value="yes">
@@ -141,7 +177,7 @@
                   Once the mockup is approved, I move on to development and keep you informed of progress. Finally,
                   <strong>after final validation,</strong> the site goes live.
                 </p>
-                <div class="feedback-container"> 
+                <div class="feedback-container">
                   <p>Was this answer helpful ?</p>
                   <div class="feedback-buttons">
                     <button class="feedback-btn" data-value="yes">
@@ -206,7 +242,7 @@
                   to <a class="faq__link" href="/en/appointment.html" target="_blank">schedule an appointment</a> to
                   discuss your specific needs.
                 </p>
-                <div class="feedback-container"> 
+                <div class="feedback-container">
                   <p>Was this answer helpful ?</p>
                   <div class="feedback-buttons">
                     <button class="feedback-btn" data-value="yes">
@@ -238,7 +274,7 @@
                   start the project, with the balance due upon final delivery. Other payment options can be considered
                   if necessary.
                 </p>
-                <div class="feedback-container"> 
+                <div class="feedback-container">
                   <p>Was this answer helpful ?</p>
                   <div class="feedback-buttons">
                     <button class="feedback-btn" data-value="yes">
@@ -270,7 +306,7 @@
                   Yes, I offer maintenance services to ensure your site remains performant and up-to-date. I also offer
                   <strong>monthly maintenance contracts</strong> for those who want continuous management.
                 </p>
-                <div class="feedback-container"> 
+                <div class="feedback-container">
                   <p>Was this answer helpful ?</p>
                   <div class="feedback-buttons">
                     <button class="feedback-btn" data-value="yes">
@@ -304,7 +340,7 @@
                   WordPress or a custom CMS so that <strong>you can easily update your site's content</strong> without
                   technical knowledge.
                 </p>
-                <div class="feedback-container"> 
+                <div class="feedback-container">
                   <p>Was this answer helpful ?</p>
                   <div class="feedback-buttons">
                     <button class="feedback-btn" data-value="yes">
@@ -340,7 +376,7 @@
                   <strong>for immediate and targeted impact.</strong> Whether you need organic or paid search
                   optimization, we adapt our services to your goals and budget.
                 </p>
-                <div class="feedback-container"> 
+                <div class="feedback-container">
                   <p>Was this answer helpful ?</p>
                   <div class="feedback-buttons">
                     <button class="feedback-btn" data-value="yes">
@@ -359,22 +395,22 @@
 
         </ul>
 
-                <!-- Remplacer le div feedback-container existant à la fin par: -->
-                <div class="global-feedback-container">
-                  <h3 style="color: #0ef; margin-bottom: 15px;">Your feedback matters !</h3>
-                  <p>Were these answers helpful ? Help us improve our FAQ</p>
-                  <div class="stats-bars">
-                    <div class="stat-bar">
-                      <div class="stat-fill" style="width: 0%"></div>
-                      <span>👍 0% (0)</span>
-                    </div>
-                    <div class="stat-bar">
-                      <div class="stat-fill" style="width: 0%"></div>
-                      <span>👎 0% (0)</span>
-                    </div>
-                  </div>
-                  <p class="total-votes">Total votes: 0</p>
-                </div>
+        <!-- Remplacer le div feedback-container existant à la fin par: -->
+        <div class="global-feedback-container">
+          <h3 style="color: #0ef; margin-bottom: 15px;">Your feedback matters !</h3>
+          <p>Were these answers helpful ? Help us improve our FAQ</p>
+          <div class="stats-bars">
+            <div class="stat-bar">
+              <div class="stat-fill" style="width: 0%"></div>
+              <span>👍 0% (0)</span>
+            </div>
+            <div class="stat-bar">
+              <div class="stat-fill" style="width: 0%"></div>
+              <span>👎 0% (0)</span>
+            </div>
+          </div>
+          <p class="total-votes">Total votes: 0</p>
+        </div>
 
       </article>
 
@@ -394,12 +430,18 @@
     </div>
 
     <div class="home-sci">
-      <a href="https://twitter.com/Mis7erC" target="_blank" rel="noopener noreferrer" style="--i: 8"><i
-          class="bx bxl-twitter" alt="Follow me on Twitter"></i></a>
-      <a href="https://www.linkedin.com/in/javachrist/" target="_blank" rel="noopener noreferrer" style="--i: 9"><i
-          class="bx bxl-linkedin" alt="Follow me on Likedin"></i></a>
-      <a href="https://github.com/JavaChrist" target="_blank" rel="noopener noreferrer" style="--i: 10"><i
-          class="bx bxl-github" alt="Check out my projects on GitHub"></i></a>
+      <a href="https://twitter.com/Mis7erC" target="_blank" rel="noopener noreferrer" style="--i: 8">
+        <i class="bx bxl-twitter" aria-hidden="true"></i>
+        <span class="sr-only">Follow me on Twitter</span>
+      </a>
+      <a href="https://www.linkedin.com/in/javachrist/" target="_blank" rel="noopener noreferrer" style="--i: 9">
+        <i class="bx bxl-linkedin" aria-hidden="true"></i>
+        <span class="sr-only">Connect with me on LinkedIn</span>
+      </a>
+      <a href="https://github.com/JavaChrist" target="_blank" rel="noopener noreferrer" style="--i: 10">
+        <i class="bx bxl-github" aria-hidden="true"></i>
+        <span class="sr-only">Check out my projects on GitHub</span>
+      </a>
     </div>
 
   </footer>

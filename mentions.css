@@ -6,39 +6,42 @@ body {
   width: 100%;
 }
 
-
 .mention-content {
   background: rgba(7, 85, 91, 0.634);
   width: 90%;
-  height: 100%;
-  border-radius: 25px;
-  padding: 10px;
   margin: 100px auto;
-  padding-bottom: 100px;
-  
-}
-
-.sub-title {
-  text-align: left;
-    font-size: clamp(20px, 8vw, 50px);
+  padding: 20px;
+  border-radius: 25px;
   color: #fff;
-  opacity: 0;
-  animation: slideLeft 1s ease forwards;
-  animation-delay: 1s;
 }
 
-.sub-title span {
+/* Titre principal */
+.mention-content h1 {
+  font-size: clamp(20px, 8vw, 50px);
+  margin-bottom: 30px;
+}
+
+/* Sous-titres */
+.mention-content h2 {
   color: #0ef;
-  opacity: 0;
-  animation: slideLeft 1s ease forwards;
-  animation-delay: 2s;
+  font-size: clamp(18px, 4vw, 30px);
+  margin: 25px 0 15px;
 }
 
+/* Paragraphes */
 .mention-content p {
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.5;
-  padding: 10px 0;
-  opacity: 0;
-  animation: slideLeft 1s ease forwards;
-  animation-delay: 3s;
+  margin-bottom: 15px;
+}
+
+/* Liens */
+.mention-content a {
+  color: #0ef;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mention-content a:hover {
+  color: #fff;
 }

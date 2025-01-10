@@ -1,5 +1,3 @@
-/* styles.css */
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -30,201 +28,177 @@ main {
   margin-top: 100px;
 }
 
-/* Champ URL */
+/* Conteneur principal */
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 30px;
+}
+
+/* Section URL */
 .url-input {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  width: 100%;
+  max-width: 800px;
+  gap: 15px;
+  margin:  0 auto;
+}
+
+
+.url-input label {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  white-space: nowrap;
+  font-weight: 500;
 }
 
 .url-input input {
-  padding: 10px;
-  width: 300px;
-  border: 1px solid #ccc;
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--border-color);
   border-radius: 5px;
   font-size: 1rem;
+  color: var(--text-dark);
+  background-color: white;
 }
 
-.url-input label {
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-.url-input button {
-  padding: 10px 20px;
-  background-color: rgba(7, 85, 91, 0.8);
+#update-url {
+  padding: 12px 30px;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
-.url-input button:hover {
-  background-color: #5a00d1;
+#update-url:hover {
+  background-color: var(--secondary-color);
 }
 
 /* Bouton plein écran */
 .fullscreen-btn {
-  margin-top: 10px;
+  display: block;
+  margin: 20px auto;
   padding: 10px 20px;
-  background-color: rgba(7, 85, 91, 0.8);
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .fullscreen-btn:hover {
-  background-color: #5a00d1;
+  background-color: var(--secondary-color);
 }
 
+/* Bouton retour */
 .btn-return {
-  margin: 20px 0 100px;
-  padding: 10px 20px;
-  background-color: rgba(7, 85, 91, 0.8);
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--primary-color);
   color: white;
-  border: none;
+  text-decoration: none;
   border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-return:hover {
-  background-color: #5a00d1;
+  background-color: var(--secondary-color);
 }
 
-.preview-container {
-  display: flex;
-  flex-direction: column; /* Organisation en colonne */
-  gap: 30px;
-  align-items: center; /* Centrer les éléments */
-}
-
+/* Prévisualisations */
 .preview {
-  text-align: center;
-  background: #fff;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .preview h2 {
-  margin: 10px 0;
-  font-size: 1.8rem;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
-/* Styles pour les mockups */
+/* Mockups */
 .mockup {
   position: relative;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 20px auto;
+  background: #fff;
 }
 
-/* Téléphone */
-.phone {
-  width: 380px;
-  height: 800px;
-  border: 12px solid #999;
-  border-radius: 50px;
-  position: relative;
-}
-
-/* Boutons latéraux pour téléphone */
-.phone::before {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 80px;
-  background: #666;
-  left: -12px;
-  top: 150px;
-  border-radius: 3px;
-}
-
-.phone::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 80px;
-  background: #666;
-  right: -12px;
-  top: 150px;
-  border-radius: 3px;
-}
-
-/* Caméra du téléphone */
-.phone .camera {
-  position: absolute;
-  top: 10px;
-  width: 50px;
-  height: 50px;
-  background: #333;
-  border-radius: 50%;
-  left: calc(50% - 25px);
-  z-index: 10;
+/* PC */
+.pc {
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  border: 8px solid #333;
+  border-radius: 10px;
 }
 
 /* Tablette */
 .tablet {
   width: 768px;
   height: 1024px;
-  border: 16px solid #999;
+  border: 16px solid #333;
   border-radius: 30px;
+  margin: 20px auto;
+}
+
+/* Téléphone */
+.phone {
+  width: 375px;
+  height: 812px;
+  border: 12px solid #333;
+  border-radius: 40px;
+  margin: 20px auto;
   position: relative;
 }
 
-.tablet::before {
-  content: '';
+/* Détails des appareils */
+.phone::before {
+  content: "";
   position: absolute;
-  top: 10px;
-  left: calc(50% - 25px);
-  width: 50px;
-  height: 5px;
-  background: #666;
-  border-radius: 2px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 25px;
+  background: #333;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
-.tablet::after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  width: 40px;
-  height: 4px;
-  background: #ccc;
-  border-radius: 2px;
-  left: calc(50% - 20px);
-}
-
-/* PC */
-.pc {
-  width: 1000px;
-  height: 600px;
-  border: 8px solid #999;
-  border-radius: 10px;
-}
-
-/* Style commun aux iframes */
+/* iframes */
 .mockup iframe {
   width: 100%;
   height: 100%;
   border: none;
+  background: white;
 }
 
-/* styles.css */
-
-/* Styles pour la modal */
+/* Modal */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -236,30 +210,55 @@ main {
 }
 
 .modal-content {
-  background: #fff;
+  background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 400px;
   width: 90%;
 }
 
-.modal-content p {
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-}
-
 .modal-content button {
-  padding: 10px 20px;
-  background-color: #6200ea;
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
 }
 
-.modal-content button:hover {
-  background-color: #5a00d1;
+/* Responsive */
+@media (max-width: 1024px) {
+  .tablet {
+    width: 600px;
+    height: 800px;
+  }
+
+  .pc {
+    max-width: 800px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tablet {
+    width: 90%;
+    height: 600px;
+  }
+
+  .pc {
+    width: 90%;
+    height: 400px;
+  }
+
+  .phone {
+    width: 280px;
+    height: 600px;
+  }
+
+  .url-input {
+    flex-direction: column;
+    text-align: center;
+  }
 }
