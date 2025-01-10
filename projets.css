@@ -1,119 +1,109 @@
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+main {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+
 .container {
-  width: 200px;
-  height: 200px;
-  perspective: 1000px;
-  margin: 220px auto 100px;
- 
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+perspective: 1000px;
 }
 
 .cube {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: spin 10s infinite linear;
+width: 300px;
+height: 300px;
+position: relative;
+transform-style: preserve-3d;
+animation: rotate 20s infinite linear;
 }
 
+/* ... reste des styles du cube ... */
 .face {
   position: absolute;
-  width: 200px;
-  height: 200px;
-}
-
-.cube img {
   width: 100%;
   height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.top {
-  transform: rotateX(90deg) translateZ(100px);
-}
-
-.bottom {
-  transform: rotateX(-90deg) translateZ(100px);
-}
-
-.right {
-  transform: rotateY(90deg) translateZ(100px);
-}
-
-.left {
-  transform: rotateY(-90deg) translateZ(100px);
+.face img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  backface-visibility: hidden;
 }
 
 .front {
-  transform: rotateX(0deg) translateZ(100px);
+  transform: translateZ(150px);
 }
-
 .back {
-  transform: rotateX(-180deg) translateZ(100px);
+  transform: translateZ(-150px) rotateY(180deg);
+}
+.right {
+  transform: rotateY(90deg) translateZ(150px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(150px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(150px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(150px);
 }
 
-@keyframes spin {
+@keyframes rotate {
   from {
-    transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0) rotateY(0);
   }
-
   to {
     transform: rotateX(360deg) rotateY(360deg);
   }
 }
 
-.btn-box {
-  display: inline-block;
-  margin: 20px auto;
-  margin-bottom: 200px;
-  padding: clamp(8px, 1vw, 12px) clamp(20px, 2vw, 28px);
-  background: #0ef;
-  border-radius: 40px;
-  font-size: clamp(14px, 1.5vw, 16px);
-  color: #081b29;
-  letter-spacing: 1px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
-  opacity: 0;
-  animation: slideTop 1s ease forwards;
-  animation-delay: 2s;
-  border: 1px solid #0ef;
-  height: 50px;
-}
-
-.btn-box:hover {
-  box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan;
-}
-
+/* Style des modales */
 .modal {
   display: none;
-  margin-top: 100px;
   position: fixed;
-  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
 }
 
 .modal-content {
-  background-color: #fefefe;
-  position: absolute;
-  top: 50px;
-  left: 50px;
+  background-color: var(--background-light);
+  margin: 5% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 400px;
-  height: 600px;
-  box-sizing: border-box;
-  background: rgba(7, 85, 91, 0.78);
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.title-modale {
+  color: rgb(255, 106, 0);
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+.descriptif {
+  color: white;
+  font-size: 16px;
+  margin-top: 15px;
 }
 
 .close {
@@ -130,6 +120,7 @@
   cursor: pointer;
 }
 
+
 button {
   display: block;
   margin-top: 20px;
@@ -138,16 +129,35 @@ button {
   cursor: pointer;
 }
 
-.descriptif {
-  color: white;
+
+/* Bouton Témoignages */
+/* Bouton Témoignages */
+.btn-box {
+  display: inline-block;
+  padding: 10px 60px;
+  background: var(--secondary-color);
+  border-radius: 40px;
   font-size: 16px;
-  margin-top: 15px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 5px var(--secondary-color);
+  transition: all 0.3s ease;
+  z-index: 2;
+  pointer-events: auto;
 }
 
-.title-modale {
-  color: rgb(255, 106, 0);
-  font-size: 24px;
-  margin-top: 15px;
+
+.btn-box:hover {
+  box-shadow: 0 0 25px var(--secondary-color);
+}
+
+.btn-box .short-text {
+  display: none;
 }
 
 @media (max-width: 470px) {
@@ -159,6 +169,65 @@ button {
     font-size: 20px;
   }
   .descriptif {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 550px) {
+  .btn-box {
+    padding: 8px 30px;
+    font-size: 14px;
+  }
+  
+  .btn-box .full-text {
+    display: none;
+  }
+  .btn-box .short-text {
+    display: inline;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .cube {
+    width: 200px;
+    height: 200px;
+  }
+
+  .face img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Ajuster les positions des faces pour la nouvelle taille */
+  .front {
+    transform: translateZ(100px);
+  }
+  .back {
+    transform: translateZ(-100px) rotateY(180deg);
+  }
+  .right {
+    transform: rotateY(90deg) translateZ(100px);
+  }
+  .left {
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+  .top {
+    transform: rotateX(90deg) translateZ(100px);
+  }
+  .bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+  }
+
+  /* Ajuster la taille de la modale */
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+
+  /* Ajuster le bouton */
+  .btn-box {
+    padding: 10px 40px;
     font-size: 14px;
   }
 }

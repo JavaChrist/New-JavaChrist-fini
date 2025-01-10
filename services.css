@@ -1,30 +1,25 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins", sans-serif;
+  font-family: var(--font-primary);
 }
 
 body {
-background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 .container {
   width: 90%;
-  max-width: 1400px;
+  max-width: var(--container-width);
   margin: 60px auto;
 }
 
 h1 {
   color: #1a2f42;
-  margin: 20px 0;
-  padding-bottom: 20px;
+  margin: var(--spacing-sm) 0;
+  padding-bottom: var(--spacing-sm);
   border-bottom: 1px dashed gray;
-}
-
-h1 span {
-display: block;
 }
 
 h1 span:nth-child(1) {
@@ -35,7 +30,7 @@ h1 span:nth-child(1) {
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-gap: 30px;
+  grid-gap: var(--spacing-md);
   margin: 80px 0;
 }
 
@@ -54,8 +49,8 @@ h1 span:nth-child(1) {
   position: relative;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.86,0,00.07,1);
-  color: white;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  color: var(--text-light);
   font-weight: bold;
 }
 
@@ -64,14 +59,14 @@ h1 span:nth-child(1) {
   position: absolute;
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: var(--spacing-md);
   border-radius: 8px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
 .card-front {
-  background: rgba(7, 85, 91, 0.8);
+  background: var(--background-transparent);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,7 +74,7 @@ h1 span:nth-child(1) {
 
 .card-wrapper:nth-child(even) .card-front {
   background: #1a2f42;
-} 
+}
 
 .card-front p {
   font-size: 1rem;
@@ -92,7 +87,7 @@ h1 span:nth-child(1) {
 
 .card-front h2 {
   font-size: 2rem;
-  color: #0ef;
+  color: var(--secondary-color);
 }
 
 .arrow-icon {
@@ -102,20 +97,20 @@ h1 span:nth-child(1) {
 }
 
 .card-price span {
-font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .card-back {
   background: #ed5d34;
   transform: rotateY(180deg);
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .card-wrapper:nth-child(even) .card-back {
   background: #97051d;
-} 
+}
 
 .card-back a {
   font-weight: normal;
@@ -126,14 +121,12 @@ font-size: 1.5rem;
   color: 0.3s ease-out;
 }
 
-.card-wrapper:nth-child(odd) .card-back 
-a:hover {
+.card-wrapper:nth-child(odd) .card-back a:hover {
   background: #1a2f42;
   color: #fff;
-} 
+}
 
-.card-wrapper:nth-child(even) .card-back 
-a:hover {
+.card-wrapper:nth-child(even) .card-back a:hover {
   background: #ed5d34;
   color: #fff;
-} 
+}

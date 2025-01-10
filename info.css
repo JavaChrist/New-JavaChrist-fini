@@ -11,12 +11,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #ededed;
+  color: var(--text-light);
   overflow-y: auto;
   padding-bottom: 60px;
   padding-top: 70px;
 }
-
 
 .container {
   flex: 1;
@@ -31,146 +30,150 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .about {
-  max-width: 1200px;
-  height: 675px;
-  background: rgba(7, 85, 91, 0.585);
-  margin: 20px auto;
+  max-width: var(--container-width);
+  background: var(--background-transparent);
+  margin: var(--spacing-sm) auto;
   border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-md);
   position: relative;
-
+  overflow: visible;
 }
 
-.about-text {
-  min-height: 700px;
-}
-
-.about-scroll {
-  overflow: auto; 
-}
-
-.about::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
+/* Style de l'image avec le pouce levé */
 .about-img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
   float: left;
-  width: 230px;
-  height: 230px;
-  shape-outside: circle(50% at 50% 50%);
-  clip-path: circle(50% at 50% 50%);
-  margin: 0 20px 20px 0;
+  shape-outside: circle(50%);
+  margin-right: var(--spacing-lg);
 }
 
-.avatar-img {
+.about-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
 }
 
-.about-text h2 {
-  margin-bottom: 10px;
-  font-size: 60px;
+/* Titre "A mon Propos" */
+.about h2 {
+  font-size: clamp(30px, 4vw, 40px);
+  margin-bottom: var(--spacing-md);
   opacity: 0;
   animation: slideRight 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.about h2 span {
+  color: var(--secondary-color);
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
   animation-delay: 1s;
+  font-size: clamp(30px, 4vw, 40px);
 }
 
-.about-text h2 span {
-  color: #0ef;
+/* Sous-titre développeur */
+.about h3 {
+  font-size: clamp(20px, 4vw, 30px);
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-md);
 }
 
-.about-text h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #330695;
-  margin-bottom: 10px;
+/* Texte de présentation */
+.about p {
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-light);
 }
 
-.about-text p {
-  color: rgb(36, 37, 38);
-  font-size: 17px;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-  margin: 0px 20px 0px 20px;
-  margin-top: 50px;
-  letter-spacing: 2px;
-  font-weight: 500;
-}
-
+/* Bouton "En savoir plus" */
 .btn-box {
   display: inline-block;
-  padding: 8px;
-  margin: 40px 20px;
-  background: #0ef;
+  padding: 8px 20px;
+  background: var(--secondary-color);
   border-radius: 40px;
   font-size: 16px;
-  color: #081b29;
+  color: var(--text-dark);
   letter-spacing: 1px;
   text-decoration: none;
   font-weight: 600;
+  border: 1px solid var(--secondary-color);
+  box-shadow: 0 0 5px var(--secondary-color), 0 0 25px var(--secondary-color);
+  transition: var(--transition-standard);
   opacity: 0;
   animation: slideTop 1s ease forwards;
   animation-delay: 2s;
-  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
-  border: 1px solid #0ef;
 }
 
 .btn-box:hover {
   box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan;
 }
 
-@media (max-width: 1050px) {
-  .about {
-    margin: 20px 10px;
-    overflow-y: auto;
+@media (max-width: 768px) {
+  .about-img {
+    float: none;
+    margin: 0 auto var(--spacing-md);
+    width: 200px;
+    height: 200px;
   }
-  
+
+  .about {
+    text-align: center;
+    margin: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    height: auto;
+    overflow: visible;
+  }
+
   .about-text {
+    overflow: visible;
     height: auto;
   }
 
-  .about-scroll {
-    overflow-y: visible;
-  }
-
-  .about-img {
-    width: 150px;
-    height: 150px;
-  }
-.btn-box{
-}
-
-}
-
-@media (max-width: 700px) {
-  .about-text p {
-    font-size: 15px;
-  }
-  .about-text h2 {
-    font-size: 40px;
+  .about p {
+    margin-bottom: var(--spacing-md);
   }
 }
 
-@media (max-width: 570px) {
-  .about-text p {
-    font-size: 14px;
+/* Animations */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
   }
-  .about-text h2 {
-    font-size: 30px;
-  }
-  .about-text h3 {
-    font-size: 18px;
-  }
-  .btn-box {
-    font-size: 14px;
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

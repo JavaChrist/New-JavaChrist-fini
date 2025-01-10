@@ -5,13 +5,13 @@ import { getStorage, ref, listAll, getDownloadURL } from "https://www.gstatic.co
 
 // Configuration Firebase (ajoute tes informations de configuration Firebase ici)
 const firebaseConfig = {
-  apiKey: "AIzaSyBYEmTNCfhU-dNjHlEA7u_rZydR7NwfoYo",
-  authDomain: "javachrist-b02f3.firebaseapp.com",
-  projectId: "javachrist-b02f3",
-  storageBucket: "javachrist-b02f3.firebasestorage.app",
-  messagingSenderId: "987983540724",
-  appId: "1:987983540724:web:fa97255d9ae41f03ad89a1",
-  measurementId: "G-9C8Y48XBHR"
+    apiKey: "AIzaSyBYEmTNCfhU-dNjHlEA7u_rZydR7NwfoYo",
+    authDomain: "javachrist-b02f3.firebaseapp.com",
+    projectId: "javachrist-b02f3",
+    storageBucket: "javachrist-b02f3.firebasestorage.app",
+    messagingSenderId: "987983540724",
+    appId: "1:987983540724:web:fa97255d9ae41f03ad89a1",
+    measurementId: "G-9C8Y48XBHR"
 };
 
 // Initialisation de l'application Firebase
@@ -37,11 +37,12 @@ function checkAuthState() {
 function displayClientInfo(user) {
     const clientInfoDiv = document.getElementById("client-info");
 
-    const displayName = user.displayName || "Client";
-    const email = user.email; 
+    // Utiliser le displayName de l'utilisateur s'il existe, sinon utiliser l'email
+    const displayName = user.displayName || user.email.split('@')[0];
+    const email = user.email;
 
     clientInfoDiv.innerHTML = `
-        <h2>Bonjour, ${displayName}</h2>
+        <h2>Bonjour, <span class="client-name">${displayName}</span></h2>
         <p>Email : ${email}</p>
     `;
 }

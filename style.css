@@ -1,5 +1,3 @@
-
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +11,9 @@ body {
 }
 
 body {
+  display: block !important;
   min-height: 100vh;
+  opacity: 1 !important;
   display: grid;
   grid-template-rows: auto 1fr auto;
   margin: 0;
@@ -237,7 +237,7 @@ footer p {
   }
 }
 
-@media (max-width: 1288px) {
+@media (max-width: 1330px) {
   .navbar {
     display: none;
     flex-direction: column;
@@ -324,4 +324,15 @@ footer p {
   #copyright {
     display: none;
   }
+}
+
+/* Ajouter un état de chargement */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999;
 }
