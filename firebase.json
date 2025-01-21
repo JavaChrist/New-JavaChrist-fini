@@ -1,4 +1,13 @@
 {
+  "hosting": {
+    "public": "New-JavaChrist-fini",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+
   "functions": [
     {
       "source": "functions",
@@ -15,6 +24,7 @@
       ]
     }
   ],
+  
   "storage": {
     "rules": "storage"
   }
