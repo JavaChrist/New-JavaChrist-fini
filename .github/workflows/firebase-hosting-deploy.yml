@@ -23,4 +23,4 @@ jobs:
           npm install  # Installe les dépendances de ton projet
 
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --only hosting --only hosting --token ${{ secrets.FIREBASE_AUTH_TOKEN }}
+        run: firebase deploy --only hosting --token ${{ secrets.FIREBASE_AUTH_TOKEN }}
